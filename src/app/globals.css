@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+/* Coffee-inspired color palette and design system */
+:root {
+  --background: 44 20% 96%;
+  --foreground: 30 12% 15%;
+  --card: 44 30% 98%;
+  --card-foreground: 30 12% 15%;
+  --popover: 44 30% 98%;
+  --popover-foreground: 30 12% 15%;
+  --primary: 25 35% 20%;
+  --primary-foreground: 44 50% 95%;
+  --secondary: 38 25% 85%;
+  --secondary-foreground: 25 35% 20%;
+  --muted: 40 15% 88%;
+  --muted-foreground: 30 8% 50%;
+  --accent: 32 40% 70%;
+  --accent-foreground: 25 35% 20%;
+  --coffee-dark: 22 45% 15%;
+  --coffee-medium: 28 35% 35%;
+  --coffee-light: 35 25% 65%;
+  --cream: 44 40% 90%;
+  --espresso: 18 50% 12%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 38 15% 85%;
+  --input: 38 15% 85%;
+  --ring: 25 35% 20%;
+  --radius: 0.75rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 22 30% 8%;
+    --foreground: 44 40% 90%;
+    --card: 25 25% 12%;
+    --card-foreground: 44 40% 90%;
+    --popover: 25 25% 12%;
+    --popover-foreground: 44 40% 90%;
+    --primary: 44 50% 85%;
+    --primary-foreground: 22 45% 15%;
+    --secondary: 25 20% 20%;
+    --secondary-foreground: 44 40% 90%;
+    --muted: 25 15% 18%;
+    --muted-foreground: 35 20% 65%;
+    --accent: 32 30% 40%;
+    --accent-foreground: 44 40% 90%;
+    --coffee-dark: 18 50% 12%;
+    --coffee-medium: 25 35% 25%;
+    --coffee-light: 32 25% 45%;
+    --cream: 40 20% 85%;
+    --espresso: 15 60% 8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 25 20% 20%;
+    --input: 25 20% 20%;
+    --ring: 44 50% 85%;
+  }
+}
+
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-coffee-dark: hsl(var(--coffee-dark));
+  --color-coffee-medium: hsl(var(--coffee-medium));
+  --color-coffee-light: hsl(var(--coffee-light));
+  --color-cream: hsl(var(--cream));
+  --color-espresso: hsl(var(--espresso));
+  --border-radius: var(--radius);
+  --font-family-heading: 'Georgia', serif;
+  --font-family-body: 'Inter', sans-serif;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--coffee-dark));
+  color: hsl(var(--foreground));
+  font-family: var(--font-family-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+}
+
+.gradient-coffee {
+  background: linear-gradient(135deg, hsl(var(--coffee-dark)), hsl(var(--coffee-medium)));
+}
+
+.gradient-cream {
+  background: linear-gradient(180deg, hsl(var(--cream)), hsl(var(--background)));
+}
+
+.shadow-warm {
+  box-shadow: 0 10px 30px -10px hsl(var(--coffee-medium) / 0.3);
+}
+
+.shadow-soft {
+  box-shadow: 0 4px 20px -4px hsl(var(--coffee-dark) / 0.1);
+}
+
+.logo-gradient-effect svg {
+  filter: drop-shadow(0 6px 50px hsl(var(--accent) / 0.5)) brightness(1.1);
+}
+
+.animate-star-flare {
+  animation: star-flare 1s ease-out;
+  transform-origin: center center;
+}
+
+@keyframes star-flare {
+  0% {
+    transform: scale(0.3) rotate(0deg);
+    filter: brightness(0.8) blur(0px);
+    opacity: 0;
+  }
+  10% {
+    transform: scale(0.5) rotate(45deg);
+    filter: brightness(1.2) blur(0px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.5) rotate(180deg);
+    filter: brightness(2.5) blur(1px);
+    opacity: 1;
+  }
+  90% {
+    transform: scale(1.2) rotate(315deg);
+    filter: brightness(1.5) blur(0px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0.3) rotate(360deg);
+    filter: brightness(0.8) blur(0px);
+    opacity: 0;
+  }
+}
