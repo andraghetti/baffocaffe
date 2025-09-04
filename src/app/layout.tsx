@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { siteConfig } from "@/config/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,23 +14,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Baffo Caffè - Il Nuovo Punto di Ritrovo ad Alfonsine",
-  description: "Il nuovo punto di ritrovo per gli amanti del caffè ad Alfonsine. Dove tradizione e passione si incontrano in ogni tazza. Scopri la nostra storia e vieni a trovarci in Via Ventottesima Brigata Garibaldi 6.",
-  keywords: "caffè, Alfonsine, bar, espresso, cappuccino, colazione, aperitivo, Baffo Caffè",
-  authors: [{ name: "Baffo Caffè" }],
-  creator: "Baffo Caffè",
-  publisher: "Baffo Caffè",
+  title: siteConfig.title,
+  description: siteConfig.longDescription,
+  keywords: siteConfig.keywords,
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
   openGraph: {
-    title: "Baffo Caffè - Il Nuovo Punto di Ritrovo ad Alfonsine",
-    description: "Il nuovo punto di ritrovo per gli amanti del caffè ad Alfonsine. Dove tradizione e passione si incontrano in ogni tazza.",
-    url: "https://baffocaffe.it",
-    siteName: "Baffo Caffè",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
     images: [
       {
         url: "/preview.png",
         width: 1200,
         height: 630,
-        alt: "Baffo Caffè - Il Nuovo Punto di Ritrovo ad Alfonsine",
+        alt: siteConfig.title,
       },
     ],
     locale: "it_IT",
@@ -37,8 +38,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Baffo Caffè - Il Nuovo Punto di Ritrovo ad Alfonsine",
-    description: "Il nuovo punto di ritrovo per gli amanti del caffè ad Alfonsine. Dove tradizione e passione si incontrano in ogni tazza.",
+    title: siteConfig.title,
+    description: siteConfig.description,
     images: ["/preview.png"],
   },
   icons: {

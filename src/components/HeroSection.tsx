@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Logo from "./Logo";
+import { siteConfig } from "@/config/site";
 
 const HeroSection = () => {
   return (
@@ -47,16 +48,16 @@ const HeroSection = () => {
             portrait:text-3xl portrait:sm:text-4xl portrait:md:text-6xl portrait:lg:text-8xl
             landscape:text-2xl landscape:sm:text-3xl landscape:md:text-5xl landscape:lg:text-8xl
           ">
-            Baffo Caffè
+            {siteConfig.name}
           </h1>
           
-          <p className="text-cream/90 max-w-2xl mx-auto drop-shadow-md leading-relaxed
+          <div className="text-cream/90 max-w-2xl mx-auto drop-shadow-md leading-relaxed
             portrait:text-base portrait:sm:text-lg portrait:md:text-xl portrait:lg:text-2xl
             landscape:text-sm landscape:sm:text-base landscape:md:text-lg landscape:lg:text-2xl
           ">
-            Il nuovo punto di ritrovo per gli amanti del caffè ad Alfonsine. 
-            Dove tradizione e passione si incontrano in ogni tazza.
-          </p>
+            <p>Il tuo negozio di capsule caffè ad Alfonsine.</p>
+            <p>Scopri la qualità e la varietà per la tua macchina del caffè.</p>
+          </div>
           
           <Button 
             size="lg"
@@ -65,12 +66,12 @@ const HeroSection = () => {
               landscape:px-4 landscape:py-2 landscape:sm:px-6 landscape:sm:py-3 landscape:md:px-8 landscape:md:py-4 landscape:lg:px-10 landscape:lg:py-5 landscape:text-sm landscape:sm:text-base landscape:md:text-lg landscape:lg:text-xl
             "
             onClick={() => {
-              document.getElementById('story')?.scrollIntoView({ 
+              document.getElementById(siteConfig.cta.targetId)?.scrollIntoView({ 
                 behavior: 'smooth' 
               });
             }}
           >
-            Scopri la Nostra Storia
+            {siteConfig.cta.text}
           </Button>
         </div>
       </div>
