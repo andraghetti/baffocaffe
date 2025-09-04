@@ -6,41 +6,64 @@ import Logo from "./Logo";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 gradient-coffee bg-cover bg-center bg-no-repeat"
-      >
+    <section className="relative h-screen overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 gradient-coffee">
         <div className="absolute inset-0 bg-coffee-dark/60"></div>
       </div>
       
-      {/* Filippo Overlay - Bottom Left Anchored on all screens */}
+      {/* Filippo Image - Always anchored bottom-left */}
       <div className="absolute left-0 bottom-0 z-5 pointer-events-none">
         <Image
           src="/filippo.png"
           alt="Filippo"
           width={400}
           height={600}
-          className="w-auto h-48 md:h-[500px] object-cover object-top opacity-60 md:opacity-80"
+          className="
+            portrait:h-[50vh] portrait:w-auto 
+            landscape:h-[50vh] landscape:w-[25vw] 
+            object-cover object-top opacity-60
+          "
           priority
         />
       </div>
       
-      {/* Content */}
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-6 pb-20 md:pb-0">
-        <div className="animate-float">
-          <Logo />
+      {/* Content - Portrait: top centered, Landscape: centered */}
+      <div className="
+        relative z-10 h-full flex flex-col justify-center items-center
+        portrait:justify-start portrait:pt-[10vh]
+        landscape:justify-center
+        px-4 sm:px-6 md:px-8
+      ">
+        <div className="animate-float text-center w-full max-w-4xl mx-auto 
+          portrait:space-y-3 portrait:sm:space-y-4 portrait:md:space-y-6
+          landscape:space-y-0 landscape:sm:space-y-1 landscape:md:space-y-3 landscape:lg:space-y-6
+        ">
+          <div className="landscape:scale-60 landscape:sm:scale-70 landscape:md:scale-80 landscape:lg:scale-90">
+            <Logo />
+          </div>
           
-          <h1 className="text-6xl md:text-8xl font-bold text-cream mb-6">
+          <h1 className="font-bold text-cream drop-shadow-lg
+            portrait:text-3xl portrait:sm:text-4xl portrait:md:text-6xl portrait:lg:text-8xl
+            landscape:text-2xl landscape:sm:text-3xl landscape:md:text-5xl landscape:lg:text-8xl
+          ">
             Baffo Caffè
           </h1>
-          <p className="text-xl md:text-2xl text-cream/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+          
+          <p className="text-cream/90 max-w-2xl mx-auto drop-shadow-md leading-relaxed
+            portrait:text-base portrait:sm:text-lg portrait:md:text-xl portrait:lg:text-2xl
+            landscape:text-sm landscape:sm:text-base landscape:md:text-lg landscape:lg:text-2xl
+          ">
             Il nuovo punto di ritrovo per gli amanti del caffè ad Alfonsine. 
             Dove tradizione e passione si incontrano in ogni tazza.
           </p>
+          
           <Button 
             size="lg"
-            className="bg-accent hover:bg-accent/90 text-coffee-dark font-semibold px-8 py-6 text-lg shadow-warm transition-all duration-300 hover:shadow-lg hover:scale-105"
+            className="bg-accent hover:bg-accent/90 text-coffee-dark font-semibold shadow-warm transition-all duration-300 hover:shadow-lg hover:scale-105
+              portrait:px-6 portrait:py-3 portrait:sm:px-8 portrait:sm:py-4 portrait:md:px-10 portrait:md:py-5 portrait:text-base portrait:sm:text-lg portrait:md:text-xl
+              landscape:px-4 landscape:py-2 landscape:sm:px-6 landscape:sm:py-3 landscape:md:px-8 landscape:md:py-4 landscape:lg:px-10 landscape:lg:py-5 landscape:text-sm landscape:sm:text-base landscape:md:text-lg landscape:lg:text-xl
+            "
             onClick={() => {
               document.getElementById('story')?.scrollIntoView({ 
                 behavior: 'smooth' 
@@ -49,15 +72,7 @@ const HeroSection = () => {
           >
             Scopri la Nostra Storia
           </Button>
-          
         </div>
-      </div>
-      
-      {/* Decorative Elements */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-cream/60 animate-bounce">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M7 10L12 15L17 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
       </div>
     </section>
   );

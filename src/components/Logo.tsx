@@ -26,13 +26,13 @@ const Logo = () => {
     }, []);
 
   return (
-    <div className="mb-8 flex justify-center">
+    <div className="mb-8 portrait:mb-8 landscape:mb-2 landscape:sm:mb-3 landscape:md:mb-4 flex justify-center">
         <div className="logo-gradient-effect relative">
             <svg 
             width="200" 
             height="200" 
             viewBox="0 0 900 843" 
-            className="w-40 h-40 md:w-50 md:h-50"
+            className="w-40 h-40 md:w-50 md:h-50 landscape:w-32 landscape:h-32 landscape:sm:w-36 landscape:sm:h-36 landscape:md:w-40 landscape:md:h-40"
             xmlns="http://www.w3.org/2000/svg"
             >
             <defs>
