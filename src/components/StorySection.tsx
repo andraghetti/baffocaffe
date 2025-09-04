@@ -26,8 +26,8 @@ const StorySection = () => {
                 delle migliori miscele, ha deciso di portare ad Alfonsine un angolo di autentica cultura del caffè.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Baffo Caffè nasce dal desiderio di creare un luogo dove la comunità possa ritrovarsi, 
-                condividere momenti preziosi e gustare un caffè preparato con amore e competenza.
+                Baffo Caffè nasce dal desiderio di offrire ad Alfonsine le migliori capsule e cialde per caffè, 
+                selezionate con cura per garantire la qualità che meriti nella tua casa.
               </p>
             </div>
           </Card>
@@ -45,21 +45,21 @@ const StorySection = () => {
             
             <Card className="p-6 shadow-soft border-0 bg-card/60">
               <h4 className="text-xl font-semibold text-coffee-dark mb-3">
-                L&apos;Atmosfera
+                La Varietà
               </h4>
               <p className="text-muted-foreground">
-                Un ambiente caldo e accogliente dove tradizione e modernità si fondono, 
-                creando il luogo perfetto per una pausa rigenerante.
+                Una vasta selezione di capsule compatibili con tutte le principali macchine da caffè, 
+                per soddisfare ogni gusto e preferenza.
               </p>
             </Card>
             
             <Card className="p-6 shadow-soft border-0 bg-card/60">
               <h4 className="text-xl font-semibold text-coffee-dark mb-3">
-                La Comunità
+                Il Servizio
               </h4>
               <p className="text-muted-foreground">
-                Non solo caffè, ma un punto di incontro per Alfonsine. Un luogo dove 
-                nascono amicizie e si condividono storie davanti a una tazza fumante.
+                Consulenza personalizzata per aiutarti a trovare le capsule perfette per la tua macchina, 
+                con consigli esperti per ogni tipo di preparazione.
               </p>
             </Card>
           </div>
