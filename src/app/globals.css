@@ -29,34 +29,6 @@
   --radius: 0.75rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: 22 30% 8%;
-    --foreground: 44 40% 90%;
-    --card: 25 25% 12%;
-    --card-foreground: 44 40% 90%;
-    --popover: 25 25% 12%;
-    --popover-foreground: 44 40% 90%;
-    --primary: 44 50% 85%;
-    --primary-foreground: 22 45% 15%;
-    --secondary: 25 20% 20%;
-    --secondary-foreground: 44 40% 90%;
-    --muted: 25 15% 18%;
-    --muted-foreground: 35 20% 65%;
-    --accent: 32 30% 40%;
-    --accent-foreground: 44 40% 90%;
-    --coffee-dark: 18 50% 12%;
-    --coffee-medium: 25 35% 25%;
-    --coffee-light: 32 25% 45%;
-    --cream: 40 20% 85%;
-    --espresso: 15 60% 8%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 25 20% 20%;
-    --input: 25 20% 20%;
-    --ring: 44 50% 85%;
-  }
-}
 
 @theme {
   --color-background: hsl(var(--background));
