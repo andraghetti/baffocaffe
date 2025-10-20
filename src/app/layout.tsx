@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: siteConfig.title,
-  description: siteConfig.longDescription,
+  description: siteConfig.description,
   keywords: siteConfig.keywords,
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,

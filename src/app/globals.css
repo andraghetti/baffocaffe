@@ -2,7 +2,7 @@
 
 /* Coffee-inspired color palette and design system */
 :root {
-  --background: 44 20% 96%;
+  --background: 44 20% 85%;
   --foreground: 30 12% 15%;
   --card: 44 30% 98%;
   --card-foreground: 30 12% 15%;
@@ -65,9 +65,18 @@
 }
 
 body {
-  background-color: hsl(var(--background));
+  background-color: hsl(var(--cream));
+  background-image: url('/background.png');
+  background-repeat: repeat;
+  background-size: auto;
+  background-attachment: fixed;
   color: hsl(var(--foreground));
   font-family: var(--font-family-body);
+  overscroll-behavior: none;
+}
+
+html {
+  overscroll-behavior: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -125,4 +134,35 @@ h1, h2, h3, h4, h5, h6 {
     filter: brightness(0.8) blur(0px);
     opacity: 0;
   }
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, hsl(var(--coffee-dark)), hsl(var(--coffee-dark) / 0.98));
+  color: hsl(var(--cream));
+  font-weight: 600;
+  box-shadow: 0 10px 30px -10px hsl(var(--coffee-medium) / 0.3);
+  transition: all 0.1s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, hsl(var(--coffee-medium) / 0.15), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, hsl(var(--coffee-dark) / 0.95), hsl(var(--coffee-dark) / 0.92));
+  box-shadow: 0 15px 40px -10px hsl(var(--coffee-medium) / 0.4);
+  transform: scale(1.02);
+}
+
+.btn-primary:hover::before {
+  left: 100%;
 }
